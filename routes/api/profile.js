@@ -176,7 +176,7 @@ router.put('/experience', [
             profile.experience.unshift(newExp);
             await profile.save();
 
-            return res.json({profile});
+            return res.json(profile);
         }
     } catch (error) {
         console.error('Server==>',error.message);
@@ -238,7 +238,7 @@ router.put('/education', [
             profile.education.unshift(newEdu);
             await profile.save();
 
-            return res.json({profile});
+            return res.json(profile);
         }
     } catch (error) {
         console.error('Server==>',error.message);
