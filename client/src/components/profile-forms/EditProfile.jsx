@@ -40,7 +40,7 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
 
 
     }, [
-        loading,
+        loading,getCurrentProfile
     ]);
 
     const { company, website, location, status, skills, githubusername, bio, twitter, facebook, linkedin, youtube, instagram } = formData;
