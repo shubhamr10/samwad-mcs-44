@@ -286,8 +286,16 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
 
 router.get('/github/:username', async (req, res) => {
     try {
+        /**
+         * @description : Commented OAuth because it has api rate limited and public repos so using fallback options
+         */
+        // const options = {
+        //     uri:`https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc&client_id=${config.get('githubclientId')}&client_secret=${config.get('githubSecret')}`,
+        //     method:'GET',
+        //     headers:{'user-agent':'node.js'}
+        // };
         const options = {
-            uri:`https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc&client_id=${config.get('githubclientId')}&client_secret=${config.get('githubSecret')}`,
+            uri:`https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`,
             method:'GET',
             headers:{'user-agent':'node.js'}
         };

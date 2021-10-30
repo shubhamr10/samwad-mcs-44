@@ -8,6 +8,8 @@ import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
 import ProfileExperience from './ProfileExperience';
 import ProfileEducation from './ProfileEducation';
+import ProfileGithub from './ProfileGithub';
+
 
 const Profile = ({ getProfileById, match, profile: { profile, loading }, auth }) => {
 
@@ -46,6 +48,10 @@ const Profile = ({ getProfileById, match, profile: { profile, loading }, auth })
                                 </Fragment>) : (<h4>No Education found!</h4>)
                             }
                         </div>
+
+                        {
+                            profile.githubusername  && <ProfileGithub username={ profile.githubusername } />
+                        }
                     </div>
                 </Fragment>
             }
